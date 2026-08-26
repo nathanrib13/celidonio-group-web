@@ -1,0 +1,48 @@
+.contact {
+  text-align: center;
+  background: var(--navy-950);
+  color: var(--paper);
+}
+
+.contact :global(.eyebrow) {
+  color: var(--gold-soft);
+}
+
+.contact :global(.accent) {
+  color: var(--gold-soft);
+}
+
+.heading {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(36px, 7vw, 80px);
+  margin-top: 20px;
+  color: var(--paper);
+}
+
+.sub {
+  margin: 22px auto 0;
+  color: var(--paper-dim);
+  font-size: 17px;
+}
+
+.email {
+  display: inline-block;
+  margin-top: 48px;
+  font-family: var(--font-body);
+  font-size: clamp(18px, 2.6vw, 26px);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  padding-bottom: 10px;
+  color: var(--paper);
+  background-image: linear-gradient(var(--gold), var(--gold));
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  background-size: 100% 1px;
+  transition: background-size 0.35s ease, color 0.35s ease;
+}
+
+.email:hover {
+  color: var(--gold-soft);
+  background-size: 0% 1px;
+}

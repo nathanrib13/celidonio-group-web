@@ -1,0 +1,52 @@
+.visao {
+  position: relative;
+  background: var(--paper-alt);
+  color: var(--navy-950);
+  padding-block: clamp(96px, 15vw, 176px);
+  overflow: hidden;
+  border-top: 1px solid var(--line);
+}
+
+.mark {
+  position: absolute;
+  top: 50%;
+  left: clamp(-260px, -14vw, -120px);
+  width: min(56vw, 620px);
+  transform: translateY(-50%);
+  opacity: 0.08;
+  filter: grayscale(1) brightness(0.4);
+  pointer-events: none;
+}
+
+.inner {
+  position: relative;
+  z-index: 1;
+  max-width: 760px;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.eyebrow {
+  justify-content: center;
+  color: var(--red);
+}
+
+.heading {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(30px, 5vw, 56px);
+  line-height: 1.15;
+  margin-top: 20px;
+}
+
+.heading :global(.accent) {
+  color: var(--red);
+}
+
+.body {
+  margin: 30px auto 0;
+  max-width: 56ch;
+  font-size: 17px;
+  line-height: 1.75;
+  color: var(--muted);
+}

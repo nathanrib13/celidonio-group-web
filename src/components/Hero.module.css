@@ -1,0 +1,128 @@
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  padding-top: 96px;
+  background: var(--paper);
+}
+
+.glow {
+  position: absolute;
+  inset: -20% -10% auto -10%;
+  height: 900px;
+  background:
+    radial-gradient(680px 480px at 80% 6%, rgba(16, 41, 74, 0.07), transparent 60%),
+    radial-gradient(520px 360px at 16% 20%, rgba(201, 154, 58, 0.1), transparent 65%);
+  pointer-events: none;
+}
+
+.mark {
+  position: absolute;
+  top: 50%;
+  right: clamp(-220px, -6vw, -60px);
+  width: min(64vw, 780px);
+  transform: translateY(-50%);
+  opacity: 0.14;
+  filter: grayscale(1) brightness(0.55);
+  pointer-events: none;
+  perspective: 800px;
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  max-width: 860px;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(36px, 5.4vw, 68px);
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+  margin-top: 22px;
+  color: var(--navy-950);
+}
+
+.titleAccent {
+  color: var(--gold-ink);
+}
+
+.lead {
+  margin-top: 28px;
+  max-width: 460px;
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 44px;
+}
+
+.primary,
+.secondary {
+  padding: 16px 30px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.primary {
+  background: var(--navy-950);
+  color: var(--paper);
+}
+
+.primary:hover {
+  transform: translateY(-2px);
+  background: var(--gold-ink);
+}
+
+.secondary {
+  border: 1px solid var(--line);
+  color: var(--navy-950);
+}
+
+.secondary:hover {
+  transform: translateY(-2px);
+  border-color: var(--navy-950);
+}
+
+.tagline {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: clamp(64px, 10vw, 120px);
+  padding-inline: var(--edge);
+  padding-bottom: 48px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.tagline i {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--gold-ink);
+  font-style: normal;
+}
+
+@media (max-width: 640px) {
+  .mark {
+    opacity: 0.12;
+    right: -40vw;
+  }
+}
