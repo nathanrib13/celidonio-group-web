@@ -1,10 +1,13 @@
 import { motion } from "framer-motion";
-import badge from "../assets/celidonio-badge.png";
+import badge from "../assets/celidonio-seal.svg";
+import { useLanguage } from "../i18n/LanguageContext";
 import styles from "./Vision.module.css";
 
 const easeOut = [0.16, 1, 0.3, 1] as const;
 
 export default function Vision() {
+  const { t } = useLanguage();
+
   return (
     <section id="visao" className={styles.visao}>
       <img src={badge} alt="" className={styles.mark} />
@@ -16,7 +19,7 @@ export default function Vision() {
           viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 0.6, ease: easeOut }}
         >
-          Visão
+          {t.vision.eyebrow}
         </motion.p>
 
         <motion.h2
@@ -26,9 +29,9 @@ export default function Vision() {
           viewport={{ once: true, amount: 0.4 }}
           transition={{ duration: 0.7, delay: 0.08, ease: easeOut }}
         >
-          Uma das principais plataformas
+          {t.vision.headingLine1}
           <br />
-          empresariais do <span className="accent">Brasil.</span>
+          {t.vision.headingLine2} <span className="accent">{t.vision.headingAccent}</span>
         </motion.h2>
 
         <motion.p
@@ -38,10 +41,7 @@ export default function Vision() {
           viewport={{ once: true, amount: 0.4 }}
           transition={{ duration: 0.7, delay: 0.16, ease: easeOut }}
         >
-          Buscamos consolidar uma organização diversificada e sólida,
-          reconhecida pela excelência na construção de empresas, no
-          desenvolvimento de novos negócios e na realização de investimentos
-          estratégicos em diferentes setores da economia.
+          {t.vision.body}
         </motion.p>
       </div>
     </section>

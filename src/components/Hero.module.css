@@ -120,6 +120,14 @@
   font-style: normal;
 }
 
+.tagRed {
+  color: var(--red);
+}
+
+.tagGold {
+  color: var(--gold-ink);
+}
+
 @media (max-width: 640px) {
   .mark {
     opacity: 0.12;

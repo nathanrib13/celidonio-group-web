@@ -1,11 +1,13 @@
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { useEffect } from "react";
-import badge from "../assets/celidonio-badge.png";
+import badge from "../assets/celidonio-seal.svg";
+import { useLanguage } from "../i18n/LanguageContext";
 import styles from "./Hero.module.css";
 
 const easeOut = [0.16, 1, 0.3, 1] as const;
 
 export default function Hero() {
+  const { t } = useLanguage();
   const mx = useMotionValue(0);
   const my = useMotionValue(0);
   const sx = useSpring(mx, { stiffness: 40, damping: 18 });
@@ -45,7 +47,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: easeOut }}
         >
-          Grupo empresarial multissetorial
+          {t.hero.eyebrow}
         </motion.p>
 
         <motion.h1
@@ -54,9 +56,9 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.75, delay: 0.1, ease: easeOut }}
         >
-          Construindo empresas.
+          {t.hero.titleLine1}
           <br />
-          <span className={styles.titleAccent}>Criando legado.</span>
+          <span className={styles.titleAccent}>{t.hero.titleAccent}</span>
         </motion.h1>
 
         <motion.p
@@ -65,8 +67,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.24, ease: easeOut }}
         >
-          Investimos capital, estratégia e capacidade de execução em negócios
-          preparados para crescer por gerações.
+          {t.hero.lead}
         </motion.p>
 
         <motion.div
@@ -76,10 +77,10 @@ export default function Hero() {
           transition={{ duration: 0.7, delay: 0.36, ease: easeOut }}
         >
           <button className={styles.primary} onClick={() => scrollTo("segmentos")} data-cursor-active>
-            Nossos segmentos
+            {t.hero.primary}
           </button>
           <button className={styles.secondary} onClick={() => scrollTo("contato")} data-cursor-active>
-            Fale com o grupo
+            {t.hero.secondary}
           </button>
         </motion.div>
       </div>
@@ -90,11 +91,11 @@ export default function Hero() {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8, delay: 0.6 }}
       >
-        <span>Connect</span>
+        <span className={styles.tagRed}>Connect</span>
         <i />
         <span>Develop</span>
         <i />
-        <span>Transform</span>
+        <span className={styles.tagGold}>Transform</span>
       </motion.div>
     </section>
   );

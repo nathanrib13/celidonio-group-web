@@ -1,10 +1,13 @@
 import { motion } from "framer-motion";
+import { useLanguage } from "../i18n/LanguageContext";
 import styles from "./Contact.module.css";
 
 const easeOut = [0.16, 1, 0.3, 1] as const;
-const EMAIL = "contato@grupocelidonio.com.br";
+const EMAIL = "contato@celidonio.com.br";
 
 export default function Contact() {
+  const { t } = useLanguage();
+
   return (
     <section id="contato" className={`section ${styles.contact}`}>
       <div className="container">
@@ -15,7 +18,7 @@ export default function Contact() {
           viewport={{ once: true, amount: 0.6 }}
           transition={{ duration: 0.6, ease: easeOut }}
         >
-          Contato
+          {t.contact.eyebrow}
         </motion.p>
 
         <motion.h2
@@ -25,7 +28,7 @@ export default function Contact() {
           viewport={{ once: true, amount: 0.4 }}
           transition={{ duration: 0.7, delay: 0.08, ease: easeOut }}
         >
-          Vamos <span className="accent">construir.</span>
+          {t.contact.headingLine1} <span className="accent">{t.contact.headingAccent}</span>
         </motion.h2>
 
         <motion.p
@@ -35,7 +38,7 @@ export default function Contact() {
           viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 0.6, delay: 0.16, ease: easeOut }}
         >
-          Parcerias, investimentos e novas oportunidades de negócio.
+          {t.contact.sub}
         </motion.p>
 
         <motion.a

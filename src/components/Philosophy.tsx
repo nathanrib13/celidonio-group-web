@@ -1,16 +1,12 @@
 import { motion } from "framer-motion";
+import { useLanguage } from "../i18n/LanguageContext";
 import styles from "./Philosophy.module.css";
-
-const LINES = [
-  "Cada investimento é um compromisso de longo prazo.",
-  "Cada empresa é uma oportunidade de gerar valor.",
-  "Cada projeto transforma uma ideia em operação.",
-  "Cada negócio é um legado em construção.",
-];
 
 const easeOut = [0.16, 1, 0.3, 1] as const;
 
 export default function Philosophy() {
+  const { t } = useLanguage();
+
   return (
     <section id="filosofia" className={`section ${styles.philosophy}`}>
       <div className="container">
@@ -21,11 +17,11 @@ export default function Philosophy() {
           viewport={{ once: true, amount: 0.6 }}
           transition={{ duration: 0.6, ease: easeOut }}
         >
-          Filosofia
+          {t.philosophy.eyebrow}
         </motion.p>
 
         <div className={styles.lines}>
-          {LINES.map((line, i) => (
+          {t.philosophy.lines.map((line, i) => (
             <motion.div
               key={line}
               className={styles.line}

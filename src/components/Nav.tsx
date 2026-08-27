@@ -1,20 +1,23 @@
 import { useEffect, useState } from "react";
 import icon from "../assets/celidonio-icon.png";
+import { FlagBR, FlagUS } from "./Flags";
+import { useLanguage } from "../i18n/LanguageContext";
 import styles from "./Nav.module.css";
 
-const LINKS = [
-  { id: "sobre", label: "Sobre" },
-  { id: "segmentos", label: "Segmentos" },
-  { id: "filosofia", label: "Filosofia" },
-  { id: "visao", label: "Visão" },
-  { id: "contato", label: "Contato" },
-];
-
 export default function Nav() {
+  const { lang, t, setLang } = useLanguage();
   const [progress, setProgress] = useState(0);
   const [solid, setSolid] = useState(false);
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState("");
+
+  const LINKS = [
+    { id: "sobre", label: t.nav.links.sobre },
+    { id: "segmentos", label: t.nav.links.segmentos },
+    { id: "filosofia", label: t.nav.links.filosofia },
+    { id: "visao", label: t.nav.links.visao },
+    { id: "contato", label: t.nav.links.contato },
+  ];
 
   useEffect(() => {
     const onScroll = () => {
@@ -43,12 +46,15 @@ export default function Nav() {
     );
     sections.forEach((el) => observer.observe(el));
     return () => observer.disconnect();
-  }, []);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [lang]);
 
   const go = (id: string) => {
     setOpen(false);
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
+
+  const toggleLang = () => setLang(lang === "pt" ? "en" : "pt");
 
   return (
     <header className={`${styles.nav} ${solid ? styles.solid : ""}`}>
@@ -80,11 +86,21 @@ export default function Nav() {
         </nav>
 
         <button
+          className={`${styles.langToggle} ${open ? styles.langToggleOpen : ""}`}
+          onClick={toggleLang}
+          data-cursor-active
+          aria-label={lang === "pt" ? "Switch to English" : "Mudar para português"}
+        >
+          {lang === "pt" ? <FlagUS className={styles.flag} /> : <FlagBR className={styles.flag} />}
+          {lang === "pt" ? "EN" : "PT"}
+        </button>
+
+        <button
           className={styles.cta}
           onClick={() => go("contato")}
           data-cursor-active
         >
-          Fale com o grupo
+          {t.nav.cta}
         </button>
 
         <button

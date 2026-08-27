@@ -1,7 +1,18 @@
 .footer {
+  position: relative;
   border-top: 1px solid var(--navy-line);
   padding-top: clamp(56px, 8vw, 88px);
   background: var(--navy-900);
+}
+
+.footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--red), var(--gold) 55%, var(--gold-soft));
 }
 
 .top {
@@ -16,13 +27,38 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 16px;
+  gap: 18px;
+}
+
+.brandRow {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.brandMarkWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--surface);
+  flex-shrink: 0;
 }
 
 .mark {
-  width: auto;
-  height: 44px;
-  flex-shrink: 0;
+  width: 22px;
+  height: auto;
+}
+
+.brandName {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 16px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--paper);
 }
 
 .tagline {
@@ -31,6 +67,14 @@
   letter-spacing: 0.24em;
   text-transform: uppercase;
   color: var(--paper-dim);
+}
+
+.tagRed {
+  color: var(--red-soft);
+}
+
+.tagGold {
+  color: var(--gold-soft);
 }
 
 .segments {

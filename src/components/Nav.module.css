@@ -99,6 +99,36 @@
   right: 0;
 }
 
+.langToggle {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 13px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: var(--navy-950);
+  transition: border-color 0.25s ease, color 0.25s ease;
+}
+
+.flag {
+  width: 18px;
+  height: auto;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.langToggle:hover {
+  border-color: var(--gold-ink);
+}
+
+.langToggleOpen {
+  color: var(--paper);
+  border-color: var(--navy-line);
+}
+
 .cta {
   border: 1px solid var(--line);
   padding: 10px 20px;

@@ -7,10 +7,11 @@ import Nav from "./components/Nav";
 import Philosophy from "./components/Philosophy";
 import Segments from "./components/Segments";
 import Vision from "./components/Vision";
+import { LanguageProvider } from "./i18n/LanguageContext";
 
 export default function App() {
   return (
-    <>
+    <LanguageProvider>
       <Cursor />
       <Nav />
       <main>
@@ -22,6 +23,6 @@ export default function App() {
         <Contact />
       </main>
       <Footer />
-    </>
+    </LanguageProvider>
   );
 }

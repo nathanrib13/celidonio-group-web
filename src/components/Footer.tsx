@@ -1,37 +1,42 @@
-import badge from "../assets/celidonio-badge.png";
+import icon from "../assets/celidonio-icon.png";
+import { useLanguage } from "../i18n/LanguageContext";
 import styles from "./Footer.module.css";
 
-const SEGMENTS = [
-  "Gastronomia & Hospitality",
-  "Construção & Incorporação",
-  "Mercado Imobiliário",
-  "Saúde & Medical",
-  "Serviços Empresariais",
-  "Facilities",
-  "Novos Negócios",
-];
-
 export default function Footer() {
+  const { t } = useLanguage();
   const year = new Date().getFullYear();
 
   return (
     <footer className={styles.footer}>
       <div className={`container ${styles.top}`}>
         <div className={styles.brand}>
-          <img src={badge} alt="Celidonio Group" className={styles.mark} />
-          <p className={styles.tagline}>Connect · Develop · Transform</p>
+          <div className={styles.brandRow}>
+            <span className={styles.brandMarkWrap}>
+              <img src={icon} alt="" className={styles.mark} />
+            </span>
+            <span className={styles.brandName}>{t.footer.brandName}</span>
+          </div>
+          <p className={styles.tagline}>
+            <span className={styles.tagRed}>Connect</span>
+            <span> · </span>
+            <span>Develop</span>
+            <span> · </span>
+            <span className={styles.tagGold}>Transform</span>
+          </p>
         </div>
 
         <ul className={styles.segments}>
-          {SEGMENTS.map((s) => (
-            <li key={s}>{s}</li>
+          {t.segments.items.map((s) => (
+            <li key={s.title}>{s.title}</li>
           ))}
         </ul>
       </div>
 
       <div className={`container ${styles.bottom}`}>
-        <p>© {year} Grupo Celidonio. Todos os direitos reservados.</p>
-        <p>Construindo empresas. Criando legado.</p>
+        <p>
+          © {year} {t.footer.brandName}. {t.footer.copyright}
+        </p>
+        <p>{t.footer.closing}</p>
       </div>
     </footer>
   );

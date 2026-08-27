@@ -64,6 +64,51 @@
   max-width: 32ch;
 }
 
+.model {
+  margin-top: clamp(56px, 8vw, 100px);
+  padding: clamp(36px, 5vw, 56px);
+  border-radius: 20px;
+  background: var(--navy-950);
+}
+
+.modelEyebrow {
+  color: var(--gold-soft) !important;
+}
+
+.modelInner {
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.modelHeading {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(26px, 3.4vw, 40px);
+  line-height: 1.18;
+  color: var(--paper);
+}
+
+.modelHeading :global(.accent) {
+  color: var(--gold-soft);
+}
+
+.modelBody {
+  font-size: 16.5px;
+  line-height: 1.75;
+  color: var(--paper-dim);
+  max-width: 46ch;
+}
+
+@media (max-width: 860px) {
+  .modelInner {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+}
+
 @media (max-width: 860px) {
   .grid {
     grid-template-columns: 1fr;
