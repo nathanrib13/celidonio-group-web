@@ -1,5 +1,6 @@
 import icon from "../assets/celidonio-icon.png";
 import { useLanguage } from "../i18n/LanguageContext";
+import { WhatsAppIcon } from "./WhatsAppIcon";
 import styles from "./Footer.module.css";
 
 const WHATSAPP_URL = "https://wa.me/5521992229972";
@@ -35,6 +36,7 @@ export default function Footer() {
             className={styles.whatsapp}
             data-cursor-active
           >
+            <WhatsAppIcon className={styles.whatsappIcon} />
             WhatsApp
           </a>
         </div>

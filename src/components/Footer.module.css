@@ -78,6 +78,9 @@
 }
 
 .whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
   font-size: 13px;
   font-weight: 700;
   letter-spacing: 0.02em;
@@ -88,6 +91,12 @@
 
 .whatsapp:hover {
   color: var(--gold-soft);
+}
+
+.whatsappIcon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
 }
 
 .segments {

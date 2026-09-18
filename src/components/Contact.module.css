@@ -54,3 +54,15 @@
   color: var(--gold-soft);
   background-size: 0% 1px;
 }
+
+.whatsappLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.whatsappIcon {
+  width: 1.1em;
+  height: 1.1em;
+  flex-shrink: 0;
+}
