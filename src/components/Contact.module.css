@@ -26,9 +26,17 @@
   font-size: 17px;
 }
 
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: baseline;
+  gap: 16px 40px;
+  margin-top: 48px;
+}
+
 .email {
   display: inline-block;
-  margin-top: 48px;
   font-family: var(--font-body);
   font-size: clamp(18px, 2.6vw, 26px);
   font-weight: 700;

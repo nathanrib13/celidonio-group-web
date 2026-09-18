@@ -91,11 +91,14 @@ export default function Hero() {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8, delay: 0.6 }}
       >
-        <span className={styles.tagRed}>Connect</span>
-        <i />
-        <span>Develop</span>
-        <i />
-        <span className={styles.tagGold}>Transform</span>
+        {t.footer.tagline.split(" · ").map((word, i, arr) => (
+          <span key={word} style={{ display: "contents" }}>
+            <span className={i === 0 ? styles.tagRed : i === arr.length - 1 ? styles.tagGold : undefined}>
+              {word}
+            </span>
+            {i < arr.length - 1 && <i />}
+          </span>
+        ))}
       </motion.div>
     </section>
   );

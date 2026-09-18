@@ -2,6 +2,8 @@ import icon from "../assets/celidonio-icon.png";
 import { useLanguage } from "../i18n/LanguageContext";
 import styles from "./Footer.module.css";
 
+const WHATSAPP_URL = "https://wa.me/5521992229972";
+
 export default function Footer() {
   const { t } = useLanguage();
   const year = new Date().getFullYear();
@@ -17,12 +19,24 @@ export default function Footer() {
             <span className={styles.brandName}>{t.footer.brandName}</span>
           </div>
           <p className={styles.tagline}>
-            <span className={styles.tagRed}>Connect</span>
-            <span> · </span>
-            <span>Develop</span>
-            <span> · </span>
-            <span className={styles.tagGold}>Transform</span>
+            {t.footer.tagline.split(" · ").map((word, i, arr) => (
+              <span key={word}>
+                <span className={i === 0 ? styles.tagRed : i === arr.length - 1 ? styles.tagGold : undefined}>
+                  {word}
+                </span>
+                {i < arr.length - 1 && <span> · </span>}
+              </span>
+            ))}
           </p>
+          <a
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.whatsapp}
+            data-cursor-active
+          >
+            WhatsApp
+          </a>
         </div>
 
         <ul className={styles.segments}>

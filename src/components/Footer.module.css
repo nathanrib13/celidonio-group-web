@@ -77,6 +77,19 @@
   color: var(--gold-soft);
 }
 
+.whatsapp {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--paper-dim);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.whatsapp:hover {
+  color: var(--gold-soft);
+}
+
 .segments {
   display: grid;
   grid-template-columns: repeat(2, minmax(180px, auto));

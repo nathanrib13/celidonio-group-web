@@ -28,17 +28,17 @@ export const translations = {
       pillars: [
         {
           n: "01",
-          title: "Connect",
+          title: "Conectar",
           text: "Conectamos capital, pessoas e oportunidades a negócios com potencial real.",
         },
         {
           n: "02",
-          title: "Develop",
+          title: "Desenvolver",
           text: "Desenvolvemos operações, marcas e produtos, do zero até a maturidade.",
         },
         {
           n: "03",
-          title: "Transform",
+          title: "Transformar",
           text: "Transformamos ideias em empresas prontas para crescer e permanecer.",
         },
       ],
@@ -106,7 +106,7 @@ export const translations = {
       sub: "Parcerias, investimentos e novas oportunidades de negócio.",
     },
     footer: {
-      tagline: "Connect · Develop · Transform",
+      tagline: "Conectar · Desenvolver · Transformar",
       brandName: "Grupo Celidonio",
       copyright: "Todos os direitos reservados.",
       closing: "Construindo empresas. Criando legado.",
