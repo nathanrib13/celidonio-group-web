@@ -4,7 +4,6 @@ import { WhatsAppIcon } from "./WhatsAppIcon";
 import styles from "./Contact.module.css";
 
 const easeOut = [0.16, 1, 0.3, 1] as const;
-const EMAIL = "contato@celidonio.com.br";
 const WHATSAPP_NUMBER = "(21) 99222-9972";
 const WHATSAPP_URL = "https://wa.me/5521992229972";
 
@@ -46,18 +45,6 @@ export default function Contact() {
 
         <div className={styles.links}>
           <motion.a
-            href={`mailto:${EMAIL}`}
-            className={styles.email}
-            data-cursor-active
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.5 }}
-            transition={{ duration: 0.6, delay: 0.24, ease: easeOut }}
-          >
-            {EMAIL}
-          </motion.a>
-
-          <motion.a
             href={WHATSAPP_URL}
             target="_blank"
             rel="noopener noreferrer"
@@ -66,7 +53,7 @@ export default function Contact() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.5 }}
-            transition={{ duration: 0.6, delay: 0.32, ease: easeOut }}
+            transition={{ duration: 0.6, delay: 0.24, ease: easeOut }}
           >
             <WhatsAppIcon className={styles.whatsappIcon} />
             {WHATSAPP_NUMBER}
